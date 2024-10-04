@@ -56,6 +56,7 @@ form {
     align-items: center; /*  elemendid horisontaalselt keskel */
 }
 
+
 form textarea {
     margin-top: 5px;
     padding: 10px;
@@ -121,4 +122,32 @@ form input[type="text"] ~ textarea {  /* Valib kõik textarea elemendid, mis on 
         flex-direction: column; /* Mobiilivaates navigeerimisnupud paigutatakse vertikaalselt */
         align-items: flex-start; /* Nupud on joondatud vasakule */
     }
+}
+
+/* Stylings for Login form on Login page */
+.create-account {
+    text-decoration: none;  /* Remove underline */
+    font-size: 16px;
+    margin-top: 10px;   /* Space above the link */
+    padding: 3px;       /* Padding to make it look nice*/
+    
+}
+
+.create-account:hover {
+    color: darkblue;           /* Darker color on hover */
+    background-color: lightgrey; /* Differing BG colour on hover for visual accessibility of link */
+}
+
+.forgot-password {
+    text-decoration: none;  /* Remove underline */
+    font-style: italic; /* Italicize text */
+    font-size: 12px;
+    margin-top: 10px;   /* Add space above the link */
+    padding: 3px;       /* Padding to make it look nice*/
+    
+}
+
+.forgot-password:hover {
+    color: darkblue;           /* Darker color on hover */
+    background-color: lightgrey;  /* Differing BG colour on hover for visual accessibility of link */
 }
