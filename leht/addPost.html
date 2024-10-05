@@ -7,15 +7,18 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav class="navigation-bar">
+<nav class="navigation-bar"> <!--Navigation bari elemendid-->
     <ul class="nav-list">
         <li><a href="index.html" class="nav-link home-link">Home</a></li>
         <li><a href="addPost.html" class="nav-link add-post-link">Add Post</a></li>
     </ul>
+    <ul class="nav-list-right">
+        <li><a href="login.html" class="nav-link login-link">Login</a></li>
+    </ul>
 </nav>
 
 <h1>Add a New Post</h1>
-<div class="form-container">
+<div class="form-container"> <!--konteineri osa koos postituse lisamisega-->
     <form id="addPostForm" action="index.html" method="post" enctype="multipart/form-data">
         <label for="title">Post Title:</label>
         <input type="text" id="title" name="title" required>
@@ -30,6 +33,5 @@
     </form>
 </div>
 
-<script src="scripts.js"></script>
 </body>
 </html>

@@ -11,7 +11,10 @@ body {
 .navigation-bar {
     background-color: #333; /* Navigeerimisriba taustavärv */
     width: 100%; /* Katab kogu lehe laiuse */
-    padding: 10px 0; /*verti vahed */
+    padding: 10px 0; /* Vertikaalsed vahed */
+    display: flex;
+    justify-content: space-between; /* Jaotab sisu vasakule ja paremale */
+    align-items: center; /* Keskele vertikaalselt */
 }
 
 .nav-list {
@@ -20,40 +23,47 @@ body {
     margin: 0;
     padding: 0;
     justify-content: flex-start; /* Nupud vasakule */
-    width: 100%;
 }
 
-.nav-list li {
-    margin: 0 15px; /* nuppude horisont vahe */
+.nav-list-right {
+    display: flex; /* Kasutab Flexboxi ka parempoolse lingi jaoks */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Asetab nupu paremale */
+}
+
+.nav-list li, .nav-list-right li {
+    margin: 0 15px; /* Nuppude horisontaalne vahe */
 }
 
 .nav-link {
-    color: white; /* nuppude teksti värv */
-    text-decoration: none; /* no underline! */
-    padding: 10px 20px; /* lisaruum lingi vajutamiseks */
-    display: block; /* link klikitav kogu alas */
+    color: white; /* Nuppude teksti värv */
+    text-decoration: none; /* Eemaldab allajoonimise */
+    padding: 10px 20px; /* Lisaruum lingi vajutamiseks */
+    display: block; /* Link klikitav kogu alas */
 }
 
-/* Pseudo-class hover for nav links */
+/* Hover-efekt lingile */
 .nav-link:hover {
-    background-color: #555; /* taustavärv kui hoverid nuppe */
+    background-color: #555; /* Taustavärv kui hoverid nuppe */
 }
 
-/* class selector (kasutatud klassi valikut .form-container, et vormi ümbrust kujundada) */
+/* Form container styles */
 .form-container {
-    background-color: #f1f1f1; /* konteineri väline värv */
-    padding: 20px; /* konteineri vahed */
-    border-radius: 10px; /* curved edge konteineril */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* õrn vari konteinerile */
-    margin-top: 20px; /* gap konteineri ja nav riba vahel */
+    background-color: #f1f1f1; /* Konteineri väline värv */
+    padding: 20px; /* Konteineri vahed */
+    border-radius: 10px; /* Curved edge konteineril */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Õrn vari konteinerile */
+    margin-top: 20px; /* Gap konteineri ja navigeerimisriba vahel */
 }
 
-/* form stiilid */
+/* Form styles */
 form {
     display: flex;
-    flex-direction: column; /* elemendid  vertikaalselt */
-    width: 300px; /*  laius on 300px */
-    align-items: center; /*  elemendid horisontaalselt keskel */
+    flex-direction: column; /* Elemendid vertikaalselt */
+    width: 300px; /* Vorm on 300px lai */
+    align-items: center; /* Elemendid horisontaalselt keskel */
 }
 
 form textarea {
@@ -66,48 +76,34 @@ form textarea {
     overflow: auto; /* Tekstiala saab kerida, kui tekst ületab määratud kõrguse */
 }
 
-
 form label {
     margin-top: 10px; /* Lisab vahe ülevalt iga sildi peale */
     width: 100%; /* Silt täidab 100% vormi laiust */
 }
 
-/* Descendant selector (kasutab form input ja textarea sees elementide valimiseks) */
 form input[type="text"], form textarea, form input[type="file"] {
-    margin-top: 5px; /* vahed igale elemendile */
-    padding: 10px; /* fill, et elemente oleks kenam kasutada */
-    font-size: 16px; /* font suurus elementide aka. text kastide sees */
-    width: 100%; /* tekst täidab kogu saadava ala */
+    margin-top: 5px; /* Vahed igale elemendile */
+    padding: 10px; /* Fill, et elemente oleks kenam kasutada */
+    font-size: 16px; /* Font suurus elementide aka tekstikastide sees */
+    width: 100%; /* Tekst täidab kogu saadava ala */
 }
 
-/* Adjacent Sibling Selector (sihtmärgiks on tekstiala, mis järgneb input[type="text"]-ile) */
-form input[type="text"] + textarea {  /* Muudab vahetult järgnevate elementide stiili */
+form input[type="text"] + textarea {
     margin-top: 10px; /* Lisab täiendava vahe ainult tekstialale, mis järgneb tekstiväljale */
 }
 
 button {
-    margin-top: 20px; /* Gap nupu ja elentide aka. kastide vahel */
+    margin-top: 20px; /* Gap nupu ja kastide vahel */
     padding: 10px; /* Nuppu mugavam vajutada täiendiga */
     background-color: #4CAF50; /* Nupu taustavärv */
-    color: white; /* Nupu teksti värv+ */
+    color: white; /* Nupu teksti värv */
     border: none; /* Eemaldab nupu serva */
     cursor: pointer; /* Muudab kursori, kui nuppu hoverida */
     width: 100%; /* Nupp täidab kogu laiuse */
 }
 
-/* Pseudo-class hover for button */
 button:hover {
     background-color: #45a049; /* Hoveril muutub nupu värv tumedamaks roheliseks */
-}
-
-/* Child Selector (näide: nav > ul, et sihtida otseseid lapsi) */
-.navigation-bar > .nav-list {
-    flex-direction: row; /* Joondab nupud navigeerimisribal ühele joonele */
-}
-
-/* General Sibling Selector (näide, sihtida kõik textarea elemendid, mis on sama tasemel kui input[type="text"]) */
-form input[type="text"] ~ textarea {  /* Valib kõik textarea elemendid, mis on samal tasemel */
-    border-color: #ccc; /* Muudab kõikide textarea serva värviks helehall */
 }
 
 /* Flexbox kohandamine mobiilseadmetel */
@@ -116,9 +112,12 @@ form input[type="text"] ~ textarea {  /* Valib kõik textarea elemendid, mis on 
         width: 90%; /* Mobiilseadmetel vähendab vormi laiuse 90%-ni */
     }
 
-    /* Descendant selector nav ul sees olevate elementide jaoks mobiilivaates */
     .nav-list {
         flex-direction: column; /* Mobiilivaates navigeerimisnupud paigutatakse vertikaalselt */
         align-items: flex-start; /* Nupud on joondatud vasakule */
+    }
+    .nav-list-right {
+        margin-top: 10px; /* Login link liigub alla */
+        flex-direction: column;
     }
 }
