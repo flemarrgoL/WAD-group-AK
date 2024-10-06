@@ -296,3 +296,7 @@ button:hover {
 .nav-list li:hover ~ .nav-list-right {
     display: none; /* Näide, mis näitab, kuidas järgmise elemendi stiili muuta */
 }
+
+nav + h1 {
+    margin-top: 80px
+}
