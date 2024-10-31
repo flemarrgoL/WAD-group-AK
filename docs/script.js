@@ -27,11 +27,17 @@ function displayPosts(posts) {
     const postsSection = document.querySelector(".posts-section");
 
     posts.forEach(post => {
+        const formattedDate = new Date(post.date).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric"
+        });
+
         const postHTML = `
             <article class="post">
                 <div class="post-header">
                     <span class="post-user">${post.author}</span>
-                    <span class="post-date">${new Date(post.date).toLocaleDateString()}</span>
+                    <span class="post-date">${formattedDate}</span>
                 </div>
                 ${post.image ? `<img src="${post.image}" alt="Post image" class="post-image">` : ""}
                 <p class="post-content">${post.content}</p>
