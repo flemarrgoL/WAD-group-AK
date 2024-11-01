@@ -4,71 +4,67 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Keskel horisontaalselt */
+    align-items: center;
 }
 
-/* Navigeerimisriba */
 .navigation-bar {
-    background-color: #333; /* Navigeerimisriba taustavärv */
-    width: 100%; /* Katab kogu lehe laiuse */
+    background-color: #333;
+    width: 100%;
     height: 60px;
-    padding: 10px 0; /* Vertikaalsed vahed */
+    padding: 10px 0;
     display: flex;
-    justify-content: space-between; /* Jaotab sisu vasakule ja paremale */
-    align-items: center; /* Keskele vertikaalselt */
-    position: fixed; /* Fixitud positsioon */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Kindel, et see jääb teiste elementide peale */
+    z-index: 1000;
 }
 
 .nav-list {
-    display: flex; /* Kasutab Flexboxi, et nupud oleksid joondatud reas */
-    list-style-type: none; /* Eemaldab punktid loendi elementidest */
-    margin: 0;
-    padding: 0;
-    justify-content: flex-start; /* Nupud vasakule */
-}
-
-.nav-list-right {
-    display: flex; /* Kasutab Flexboxi ka parempoolse lingi jaoks */
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    justify-content: flex-end; /* Asetab nupu paremale */
+    justify-content: flex-start;
+}
+
+.nav-list-right {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
 }
 
 .nav-list li, .nav-list-right li {
-    margin: 0 15px; /* Nuppude horisontaalne vahe */
+    margin: 0 15px;
 }
 
 .nav-link {
-    color: white; /* Nuppude teksti värv */
-    text-decoration: none; /* Eemaldab allajoonimise */
-    padding: 10px 20px; /* Lisaruum lingi vajutamiseks */
-    display: block; /* Link klikitav kogu alas */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
 }
 
-/* Hover-efekt lingile */
 .nav-link:hover {
-    background-color: #555; /* Taustavärv kui hoverid nuppe */
+    background-color: #555;
 }
 
-/* Form container styles */
 .form-container {
-    background-color: #f1f1f1; /* Konteineri väline värv */
-    padding: 20px; /* Konteineri vahed */
-    border-radius: 10px; /* Curved edge konteineril */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Õrn vari konteinerile */
-    margin-top: 20px; /* Gap konteineri ja navigeerimisriba vahel */
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-/* Form styles */
 form {
     display: flex;
-    flex-direction: column; /* Elemendid vertikaalselt */
-    width: 300px; /* Vorm on 300px lai */
-    align-items: center; /* Elemendid horisontaalselt keskel */
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
 }
 
 
@@ -76,141 +72,141 @@ form textarea {
     margin-top: 5px;
     padding: 10px;
     font-size: 16px;
-    width: 100%; /* Tekstiala laius täidab kogu saadaval oleva ruumi */
-    height: 150px; /* Fikseeritud kõrgus tekstialale */
-    resize: none; /* Suurust ei saa muuta */
-    overflow: auto; /* Tekstiala saab kerida, kui tekst ületab määratud kõrguse */
+    width: 100%; 
+    height: 150px; 
+    resize: none;
+    overflow: auto;
 }
 
 form label {
-    margin-top: 10px; /* Lisab vahe ülevalt iga sildi peale */
-    width: 100%; /* Silt täidab 100% vormi laiust */
+    margin-top: 10px; 
+    width: 100%; 
 }
 
 form input[type="text"], form textarea, form input[type="file"] {
-    margin-top: 5px; /* Vahed igale elemendile */
-    padding: 10px; /* Fill, et elemente oleks kenam kasutada */
-    font-size: 16px; /* Font suurus elementide aka tekstikastide sees */
-    width: 100%; /* Tekst täidab kogu saadava ala */
+    margin-top: 5px; 
+    padding: 10px; 
+    font-size: 16px; 
+    width: 100%; 
 }
 
 form input[type="text"] + textarea {
-    margin-top: 10px; /* Lisab täiendava vahe ainult tekstialale, mis järgneb tekstiväljale */
+    margin-top: 10px; 
 }
 
 button {
-    margin-top: 20px; /* Gap nupu ja kastide vahel */
-    padding: 10px; /* Nuppu mugavam vajutada täiendiga */
-    background-color: #4CAF50; /* Nupu taustavärv */
-    color: white; /* Nupu teksti värv */
-    border: none; /* Eemaldab nupu serva */
-    cursor: pointer; /* Muudab kursori, kui nuppu hoverida */
-    width: 100%; /* Nupp täidab kogu laiuse */
+    margin-top: 20px; 
+    padding: 10px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    width: 100%; 
 }
 
 button:hover {
-    background-color: #45a049; /* Hoveril muutub nupu värv tumedamaks roheliseks */
+    background-color: #45a049; 
 }
 
-/* Flexbox kohandamine mobiilseadmetel */
+
 @media (max-width: 600px) {
     form {
-        width: 90%; /* Mobiilseadmetel vähendab vormi laiuse 90%-ni */
+        width: 90%; 
     }
 
     .nav-list {
-        flex-direction: column; /* Mobiilivaates navigeerimisnupud paigutatakse vertikaalselt */
-        align-items: flex-start; /* Nupud on joondatud vasakule */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
 
     .nav-list-right {
-        margin-top: 10px; /* Login link liigub alla */
+        margin-top: 10px; 
         flex-direction: column;
     }
 
-    /* Postituste sektsiooni kohandamine mobiilile */
+    
     .posts-section {
-        width: 100%; /* Täislaius mobiilseadmetel */
-        padding: 0 10px; /* Lisab veidi ruumi külgedele */
-        margin-top: 20px; /* Lisab veidi ruumi ülal */
-        margin-bottom: 20px; /* Lisab veidi ruumi all */
+        width: 100%; 
+        padding: 0 10px; 
+        margin-top: 20px; 
+        margin-bottom: 20px; 
     }
 
-    /* Iga postituse stiil mobiilseadmetel */
+    
     .post {
-        padding: 15px; /* Vähem paddingut mobiilis, et säästa ruumi */
-        margin-bottom: 10px; /* Vähem ruumi kahe postituse vahel */
+        padding: 15px; 
+        margin-bottom: 10px; 
     }
 }
 
-/* Stylings for Login form on Login page */
+
 .create-account {
-    text-decoration: none;  /* Remove underline */
+    text-decoration: none;  
     font-size: 16px;
-    margin-top: 10px;   /* Space above the link */
-    padding: 3px;       /* Padding to make it look nice*/
+    margin-top: 10px;   
+    padding: 3px;       
 }
 
 .create-account:hover {
-    color: darkblue;           /* Darker color on hover */
-    background-color: lightgrey; /* Differing BG colour on hover for visual accessibility of link */
+    color: darkblue;           
+    background-color: lightgrey; 
 }
 
 .forgot-password {
-    text-decoration: none;  /* Remove underline */
-    font-style: italic; /* Italicize text */
+    text-decoration: none;  
+    font-style: italic; 
     font-size: 12px;
-    margin-top: 10px;   /* Add space above the link */
-    padding: 3px;       /* Padding to make it look nice*/
+    margin-top: 10px;   
+    padding: 3px;       
 }
 
 .forgot-password:hover {
-    color: darkblue;           /* Darker color on hover */
-    background-color: lightgrey;  /* Differing BG colour on hover for visual accessibility of link */
+    color: darkblue;           
+    background-color: lightgrey;  
 }
 
-/* Määrata box-sizing kõigile elementidele */
+
 * {
-    box-sizing: border-box; /* Kaasa padding ja piirid laiuse ja kõrguse arvutustesse */
+    box-sizing: border-box; 
 }
 
-/* Postituste sektsioon */
+
 .posts-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px; /* Lisab vahe navigeerimisriba ja postituste vahel */
-    margin-bottom: 50px; /* Lisab vahe jaluse ja postituste vahel */
-    width: 100%; /* Kohandab laiuse 100% */
-    max-width: 800px; /* Maksimaalne laius 800px */
-    overflow-y: auto; /* Lubab vertikaalset kerimist */
-    height: calc(100vh - 110px); /* Täidab ülejäänud kõrguse pärast navigeerimisriba ja jaluse */
+    margin-top: 60px; 
+    margin-bottom: 50px; 
+    width: 100%; 
+    max-width: 800px; 
+    overflow-y: auto; 
+    height: calc(100vh - 110px); 
 }
 
-/* Iga postituse stiil */
+
 .post {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 15px;
-    width: 100%; /* Täislaius */
-    max-width: calc(100% - 40px); /* Tagab, et postituste laius arvestab ka paddingut */
+    width: 100%; 
+    max-width: calc(100% - 40px); 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
 
-/* Postituse päis - kasutaja ja kuupäev */
+
 .post-header {
     display: flex;
-    justify-content: space-between; /* Jaotab kasutajanime vasakule ja kuupäeva paremale */
+    justify-content: space-between; 
     margin-bottom: 10px;
     font-size: 0.9rem;
     color: #777;
 }
 
 .post-user {
-    color: #1da1f2; /* Twitteri stiilis sinine kasutajanimele */
+    color: #1da1f2; 
 }
 
 .post-date {
@@ -218,7 +214,7 @@ button:hover {
     text-align: right;
 }
 
-/* Postituse sisu */
+
 .post-content {
     font-size: 1rem;
     color: #333;
@@ -226,25 +222,25 @@ button:hover {
     margin-bottom: 10px;
 }
 
-/* Postituse pildi stiil */
+
 .post-image {
     max-width: 100%;
-    height: auto; /* Säilitab proportsioonid */
+    height: auto; 
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
 }
 
 
-/* Nupu stiilid - vasakul allosas */
+
 .post-footer {
     display: flex;
-    justify-content: flex-start; /* Nupp vasakul */
+    justify-content: flex-start; 
     margin-top: 10px;
 }
 
 .like-button {
-    background-color: #1da1f2; /* Twitteri sinine */
+    background-color: #1da1f2; 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -256,45 +252,45 @@ button:hover {
     background-color: #0d8dde;
 }
 
-/* Hover-efekt postitusele */
+
 .post:hover {
     background-color: #e9e9e9;
 }
 
-/* Footer */
+
 .page-footer {
-    background-color: #333; /* Sama värv nagu navigeerimisribal */
-    width: 100%; /* Katab kogu lehe laiuse */
-    height: 50px; /* Kinnitatud kõrgus footerile */
-    margin-top: auto; /* Liigutab jaluse lehe alla */
-    position: fixed; /* Fixitud positsioon */
+    background-color: #333; 
+    width: 100%; 
+    height: 50px; 
+    margin-top: auto; 
+    position: fixed; 
     bottom: 0;
     left: 0;
 }
 
-/* Pseudo-klassi näide */
+
 .posts-section .post:first-of-type {
-    margin-top: 10px; /* Lisab 10px vahe esimese postituse peale */
+    margin-top: 10px; 
 }
 
-/* Laste valija näide */
+
 .post > .post-footer {
-    margin-top: 10px; /* Lisab vahe postituse ja jaluse vahel */
+    margin-top: 10px; 
 }
 
-/* Üldine vendade valija näide */
+
 .post ~ .post {
-    border-top: 1px solid #ccc; /* Lisab piiri üksteise järel olevate postituste vahel */
+    border-top: 1px solid #ccc; 
 }
 
-/* Lähivendi valija näide */
+
 .post + .post {
-    margin-top: 20px; /* Lisab vahe kahe järjestikuse postituse vahel */
+    margin-top: 20px; 
 }
 
-/* Järgneva valija näide */
+
 .nav-list li:hover ~ .nav-list-right {
-    display: none; /* Näide, mis näitab, kuidas järgmise elemendi stiili muuta */
+    display: none; 
 }
 
 nav + h1 {
