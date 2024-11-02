@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+    /*
     const binId = "67238323acd3cb34a8a01d2c";
     const masterKey = "$2a$10$0LLmrO5RfjHiIskzW.pqtOUIUTtPR5/0UbdfWCAXyf4QK1PSU10tG";
 
-    /*
-    fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
+    fetch('https://api.jsonbin.io/v3/b/${binId}/latest', {
         method: "GET",
         headers: {
             "X-Master-Key": masterKey,
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
     */
-    fetch('./data/posts.json')
+    fetch('res/data/posts.json')
 
         .then(response => {
             if (!response.ok) {
