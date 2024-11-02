@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const binId = "67238323acd3cb34a8a01d2c";
     const masterKey = "$2a$10$0LLmrO5RfjHiIskzW.pqtOUIUTtPR5/0UbdfWCAXyf4QK1PSU10tG";
 
+    /*
     fetch(`https://api.jsonbin.io/v3/b/${binId}/latest`, {
         method: "GET",
         headers: {
@@ -9,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
             "Content-Type": "application/json"
         }
     })
+    */
+    fetch('./data/posts.json')
+
         .then(response => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
@@ -17,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
 
-            const posts = data.record;
+            const posts = data;
+            // const posts = data.record;
             displayPosts(posts);
         })
         .catch(error => console.error("Failed to load posts:", error));

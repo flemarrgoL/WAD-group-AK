@@ -4,7 +4,7 @@
     "author": "@john_doe",
     "date": "2024-10-04",
     "content": "Loving the fall weather! 🍁 #AutumnVibes",
-    "image": "resources/autumn.png"
+    "image": "res/images/autumn.png"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "author": "@wanderlust_traveler",
     "date": "2024-09-15",
     "content": "Just got back from an unforgettable trip to the Swiss Alps. The scenery was breathtaking! 🏔️ #TravelGoals",
-    "image": "resources/alps.png"
+    "image": "res/images/alps.png"
   },
   {
     "id": 4,
@@ -30,14 +30,14 @@
     "author": "@foodie_jane",
     "date": "2024-08-31",
     "content": "Tried out this new Italian restaurant today. Their pasta is out of this world! 🍝 #FoodieFinds",
-    "image": "resources/italian.png"
+    "image": "res/images/italian.png"
   },
   {
     "id": 6,
     "author": "@nature_lover",
     "date": "2024-10-10",
     "content": "Just returned from a weekend hiking trip in the beautiful national park. The fresh air and scenery were just what I needed! 🌲🌄",
-    "image": "resources/autumn.png"
+    "image": "res/images/autumn.png"
   },
   {
     "id": 7,
@@ -50,7 +50,7 @@
     "author": "@artsy_anna",
     "date": "2024-10-02",
     "content": "Finished my new painting today! Inspired by the colors of autumn. 🎨🍂",
-    "image": "resources/alps.png"
+    "image": "res/images/alps.png"
   },
   {
     "id": 9,
@@ -63,6 +63,6 @@
     "author": "@fit_and_fab",
     "date": "2024-09-28",
     "content": "Outdoor workouts are the best! Ran 10k today with amazing weather. Feeling great! 🏃‍♀️💪",
-    "image": "resources/italian.png"
+    "image": "res/images/italian.png"
   }
 ]
