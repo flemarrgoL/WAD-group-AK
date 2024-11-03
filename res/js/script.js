@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    
     /*
     const binId = "67238323acd3cb34a8a01d2c";
     const masterKey = "$2a$10$0LLmrO5RfjHiIskzW.pqtOUIUTtPR5/0UbdfWCAXyf4QK1PSU10tG";
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })
     */
+
+    // Post fetching functionality
     fetch('res/data/posts.json')
 
         .then(response => {
@@ -23,10 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const posts = data;
             // const posts = data.record;
+            // use above line instead, when fetching from online endpoint
             displayPosts(posts);
         })
         .catch(error => console.error("Failed to load posts:", error));
+
+    // Dropdown menu functionality
+
+    const profileImage = document.getElementById("profile-image");
+
+    profileImage.addEventListener("click", function () {
+        const dropdownMenu = document.getElementById("dropdown-menu");
+        dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+    });
+    
 });
+
+
 
 function displayPosts(posts) {
     const postsSection = document.querySelector(".posts-section");
