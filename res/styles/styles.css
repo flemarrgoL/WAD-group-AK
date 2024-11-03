@@ -1,3 +1,5 @@
+/* || HTML page essentials: body, footer*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +8,23 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.page-footer {
+    background-color: #333; 
+    width: 100%; 
+    height: 50px; 
+    margin-top: auto; 
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+
+/* || Navigation bar */
 
 .navigation-bar {
     background-color: #333;
@@ -51,6 +70,22 @@ body {
 .nav-link:hover {
     background-color: #555;
 }
+
+.profile-image {
+    background-color: white;
+    border-radius: 100%;
+}
+
+.nav-list li:hover ~ .nav-list-right {
+    display: none; 
+}
+
+nav + h1 {
+    margin-top: 80px
+}
+
+
+/* || Data submission forms: add post, login */
 
 .form-container {
     background-color: #f1f1f1;
@@ -108,6 +143,33 @@ button:hover {
     background-color: #45a049; 
 }
 
+.create-account {
+    text-decoration: none;  
+    font-size: 16px;
+    margin-top: 10px;   
+    padding: 3px;       
+}
+
+.create-account:hover {
+    color: darkblue;           
+    background-color: lightgrey; 
+}
+
+.forgot-password {
+    text-decoration: none;  
+    font-style: italic; 
+    font-size: 12px;
+    margin-top: 10px;   
+    padding: 3px;       
+}
+
+.forgot-password:hover {
+    color: darkblue;           
+    background-color: lightgrey;  
+}
+
+
+/* || Changes for fitting a smaller screen */
 
 @media (max-width: 600px) {
     form {
@@ -140,36 +202,7 @@ button:hover {
 }
 
 
-.create-account {
-    text-decoration: none;  
-    font-size: 16px;
-    margin-top: 10px;   
-    padding: 3px;       
-}
-
-.create-account:hover {
-    color: darkblue;           
-    background-color: lightgrey; 
-}
-
-.forgot-password {
-    text-decoration: none;  
-    font-style: italic; 
-    font-size: 12px;
-    margin-top: 10px;   
-    padding: 3px;       
-}
-
-.forgot-password:hover {
-    color: darkblue;           
-    background-color: lightgrey;  
-}
-
-
-* {
-    box-sizing: border-box; 
-}
-
+/* || Home Posts section and styling of the posts*/
 
 .posts-section {
     display: flex;
@@ -183,7 +216,6 @@ button:hover {
     height: calc(100vh - 110px); 
 }
 
-
 .post {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
@@ -194,8 +226,6 @@ button:hover {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-
-
 
 .post-header {
     display: flex;
@@ -214,14 +244,12 @@ button:hover {
     text-align: right;
 }
 
-
 .post-content {
     font-size: 1rem;
     color: #333;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 
 .post-image {
     max-width: 100%;
@@ -230,8 +258,6 @@ button:hover {
     margin-bottom: 10px;
     border-radius: 8px;
 }
-
-
 
 .post-footer {
     display: flex;
@@ -252,47 +278,22 @@ button:hover {
     background-color: #0d8dde;
 }
 
-
 .post:hover {
     background-color: #e9e9e9;
 }
-
-
-.page-footer {
-    background-color: #333; 
-    width: 100%; 
-    height: 50px; 
-    margin-top: auto; 
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-}
-
 
 .posts-section .post:first-of-type {
     margin-top: 10px; 
 }
 
-
 .post > .post-footer {
     margin-top: 10px; 
 }
-
 
 .post ~ .post {
     border-top: 1px solid #ccc; 
 }
 
-
 .post + .post {
     margin-top: 20px; 
-}
-
-
-.nav-list li:hover ~ .nav-list-right {
-    display: none; 
-}
-
-nav + h1 {
-    margin-top: 80px
 }

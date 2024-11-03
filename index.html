@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>(*Our site name*) Home page</title>
+    <title>Login page</title>
     <link rel="stylesheet" href="res/styles/styles.css">
 </head>
 <body>
 <nav class="navigation-bar">
     <ul class="nav-list">
-        <li><a href="index.html" class="nav-link home-link">Home</a></li>
-        <li><a href="addPost.html" class="nav-link add-post-link">Add Post</a></li>
+        <li><a href="home.html" class="nav-link home-link">Home</a></li>
     </ul>
     <ul class="nav-list-right">
-        <li><a href="login.html" class="nav-link login-link">Login</a></li>
+        <li><a href="index.html" class="nav-link login-link">Login</a></li>
     </ul>
 </nav>
+    
+<h1>Welcome to (Our site name)!</h1>
+<div class="form-container">
+    <form id="loginForm" action="home.html" method="post" enctype="application/x-www-form-urlencoded">
+        
+        <a href="index.html" class="create-account">Create an account</a>
+        <p>or Please log in</p>
 
-<section class="posts-section">
+        <label for="user-email">Email:</label>
+        <input type="text" id="user-email" name="user-email" required>
 
-</section>
-<footer class="page-footer"></footer>
-<script src="res/js/script.js" defer></script>
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" required>
+
+        <button type="submit">Log in</button>
+
+        <a href="index.html" class="forgot-password">Forgot your password?</a>
+          
+
+    </form>
+</div>
+    
 </body>
 </html>
