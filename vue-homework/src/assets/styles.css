@@ -1,0 +1,358 @@
+/* || HTML page essentials: body, footer*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* || Navigation bar */
+
+.navigation-bar {
+    background-color: #4f3a51; /* Taustavärv */
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Vasak ja parem pool eraldi */
+    align-items: center; /* Vertikaalne joondus keskele */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Vasakpoolne sektsioon */
+.nav-left {
+    display: flex;
+    gap: 20px; /* Vahe linkide vahel */
+}
+
+/* Parempoolne sektsioon */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Vahe Login ja ikooni vahel */
+}
+
+/* Lingid */
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem; /* Suurem font */
+    font-weight: normal; /* Bold eemaldatud */
+    padding: 5px 15px; /* Hoveri jaoks ruumiline ala */
+    border-radius: 5px; /* Kerged nurgad hoveri kastiks */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover-efekt */
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.3); /* Tumendatud taust */
+    color: #ddd; /* Heledam tekst */
+}
+
+/* Kasutajaikoon */
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Ringikujuline */
+    object-fit: cover; /* Säilitab proportsioonid ja lõikab üleliigse */
+    cursor: pointer;
+    background-color: rgb(248, 211, 248); /* Esialgne taustavärv */
+    transition: background-color 0.3s ease;
+}
+
+/* Hover efekt ikoonil */
+.profile-image:hover {
+    background-color: rgb(183, 142, 177); /* Hoveri ajal tumedam värv */
+}
+
+.dropdown-menu {
+    display: none; /* Hidden initially */
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: rgb(247, 226, 243);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-item {
+    color: #000000;
+    padding-top: 3px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #6a52b46f;
+}
+
+
+/* || Data submission forms: add post, login */
+
+.main-container {
+    display: flex;
+    justify-content: center; /* Tsentreerib sisu horisontaalselt */
+    align-items: center; /* Tsentreerib sisu vertikaalselt */
+    min-height: calc(100vh - 110px); /* Võtab kogu lehe kõrguse, arvestades headerit ja footerit */
+    padding: 20px; /* Lisaruumi servadesse */
+    background-color: transparent; /* Kui soovid halli tausta */
+    box-sizing: border-box; /* Arvestab paddingut */
+}
+
+
+.form-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fikseeritud laius */
+    max-width: 90%; /* Kohandatud väiksematele ekraanidele */
+    margin: 20px auto; /* Keskele joondamine */
+    text-align: center; /* Keskjoondus vormielementidele */
+}
+
+
+/* || Form wrapper: adjusts to its content */
+.form-wrapper {
+    background-color: #f1f1f1; /* Hall kast ainult vormi ümber */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Fikseeritud laius */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-header {
+    font-size: 2rem;
+    text-align: center;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form textarea {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 150px;
+    resize: none;
+    overflow: auto;
+}
+
+form label {
+    margin-top: 10px;
+    width: 100%;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.create-account,
+.forgot-password {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px;
+    display: inline;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.create-account:hover,
+.forgot-password:hover {
+    background-color: lightgrey;
+    color: darkblue;
+}
+
+
+/* || Changes for fitting a smaller screen */
+
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list-right {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+
+    .posts-section {
+        width: 100%;
+        padding: 0 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+    .post {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* || Home Posts section and styling of the posts*/
+
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 100%;
+    max-width: 800px;
+    overflow-y: auto;
+    height: calc(100vh - 110px);
+}
+
+.post {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: calc(100% - 40px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.post-user {
+    color: #b92be9;
+}
+
+.post-date {
+    font-weight: bold;
+    text-align: right;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between; /* Nupp vasakule, loendur paremale */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.like-button {
+    background-color: #af94dc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+    background-color: #8068a6;
+}
+
+.like-counter {
+    font-size: 1rem;
+    color: #555;
+    font-weight: bold;
+}
+
+.post:hover {
+    background-color: #fff5fd;
+}
+
+.posts-section .post:first-of-type {
+    margin-top: 10px;
+}
+
+.post > .post-footer {
+    margin-top: 10px;
+}
+
+.post ~ .post {
+    border-top: 1px solid #ccc;
+}
+
+.post + .post {
+    margin-top: 20px;
+}
