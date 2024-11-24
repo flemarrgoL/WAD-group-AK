@@ -16,7 +16,7 @@
 
 <script setup>
 import { computed } from "vue";
-import { useStore } from "vuex"; // Import Vuex's useStore function
+import { useStore } from "vuex";
 import AppHeader from "../components/AppHeader.vue";
 import AppFooter from "../components/AppFooter.vue";
 import Post from "../components/PostComponent.vue";
