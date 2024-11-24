@@ -6,7 +6,7 @@
         <router-link to="/addPost" class="nav-link">Add Post</router-link>
       </div>
       <div class="nav-right">
-        <router-link to="/login" class="nav-link">Login</router-link>
+        <router-link to="/signup" class="nav-link">Sign Up/Log in</router-link>
         <img src="/assets/user.png" class="profile-image" id="profile-image" alt="User Icon" />
       </div>
     </nav>
