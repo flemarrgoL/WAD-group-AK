@@ -1,4 +1,3 @@
-/* || HTML page essentials: body, footer*/
 
 body {
     font-family: Arial, sans-serif;
@@ -27,69 +26,67 @@ body {
 }
 
 
-/* || Navigation bar */
-
 .navigation-bar {
-    background-color: #4f3a51; /* Taustavärv */
+    background-color: #4f3a51;
     width: 100%;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* Vasak ja parem pool eraldi */
-    align-items: center; /* Vertikaalne joondus keskele */
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
 }
 
-/* Vasakpoolne sektsioon */
+
 .nav-left {
     display: flex;
-    gap: 20px; /* Vahe linkide vahel */
+    gap: 20px;
 }
 
-/* Parempoolne sektsioon */
+
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 10px; /* Vahe Login ja ikooni vahel */
+    gap: 10px;
 }
 
-/* Lingid */
+
 .nav-link {
     text-decoration: none;
     color: white;
-    font-size: 1.2rem; /* Suurem font */
-    font-weight: normal; /* Bold eemaldatud */
-    padding: 5px 15px; /* Hoveri jaoks ruumiline ala */
-    border-radius: 5px; /* Kerged nurgad hoveri kastiks */
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding: 5px 15px;
+    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover-efekt */
+
 .nav-link:hover {
-    background-color: rgba(0, 0, 0, 0.3); /* Tumendatud taust */
-    color: #ddd; /* Heledam tekst */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #ddd;
 }
 
-/* Kasutajaikoon */
+
 .profile-image {
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Ringikujuline */
-    object-fit: cover; /* Säilitab proportsioonid ja lõikab üleliigse */
+    border-radius: 50%;
+    object-fit: cover;
     cursor: pointer;
-    background-color: rgb(248, 211, 248); /* Esialgne taustavärv */
+    background-color: rgb(248, 211, 248);
     transition: background-color 0.3s ease;
 }
 
-/* Hover efekt ikoonil */
+
 .profile-image:hover {
-    background-color: rgb(183, 142, 177); /* Hoveri ajal tumedam värv */
+    background-color: rgb(183, 142, 177);
 }
 
 .dropdown-menu {
-    display: none; /* Hidden initially */
+    display: none;
     position: fixed;
     top: 100px;
     right: 20px;
@@ -109,39 +106,33 @@ body {
     background-color: #6a52b46f;
 }
 
-
-/* || Data submission forms: add post, login */
-
 .main-container {
     display: flex;
-    justify-content: center; /* Tsentreerib sisu horisontaalselt */
-    align-items: center; /* Tsentreerib sisu vertikaalselt */
-    min-height: calc(100vh - 110px); /* Võtab kogu lehe kõrguse, arvestades headerit ja footerit */
-    padding: 20px; /* Lisaruumi servadesse */
-    background-color: transparent; /* Kui soovid halli tausta */
-    box-sizing: border-box; /* Arvestab paddingut */
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 110px);
+    padding: 20px;
+    background-color: transparent;
+    box-sizing: border-box;
 }
-
 
 .form-container {
     background-color: #f1f1f1;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Fikseeritud laius */
-    max-width: 90%; /* Kohandatud väiksematele ekraanidele */
-    margin: 20px auto; /* Keskele joondamine */
-    text-align: center; /* Keskjoondus vormielementidele */
+    width: 300px;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
 }
 
-
-/* || Form wrapper: adjusts to its content */
 .form-wrapper {
-    background-color: #f1f1f1; /* Hall kast ainult vormi ümber */
+    background-color: #f1f1f1;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Fikseeritud laius */
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -154,7 +145,6 @@ body {
     margin-bottom: 20px;
     color: #333;
 }
-
 
 form {
     display: flex;
@@ -185,7 +175,6 @@ form input[type="password"] {
     width: 100%;
     box-sizing: border-box;
 }
-
 
 button {
     margin-top: 20px;
@@ -219,8 +208,6 @@ button:hover {
 }
 
 
-/* || Changes for fitting a smaller screen */
-
 @media (max-width: 600px) {
     form {
         width: 90%;
@@ -251,9 +238,6 @@ button:hover {
     }
 }
 
-
-/* || Home Posts section and styling of the posts*/
-
 .posts-section {
     display: flex;
     flex-direction: column;
@@ -266,39 +250,55 @@ button:hover {
     height: calc(100vh - 110px);
 }
 
+/* Custom Scrollbar */
+.posts-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.posts-section::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+.posts-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.posts-section::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
 .post {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 15px;
     width: 100%;
-    max-width: calc(100% - 40px);
+    box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.post-header {
+.post-header, .post-footer {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    color: #777;
+    width: 100%;
 }
 
 .post-user {
     color: #b92be9;
 }
 
-.post-date {
-    font-weight: bold;
-    text-align: right;
-}
-
 .post-content {
     font-size: 1rem;
     color: #333;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .post-image {
@@ -307,14 +307,6 @@ button:hover {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
-}
-
-.post-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    padding: 0 10px;
 }
 
 .like-button {
@@ -350,6 +342,10 @@ button:hover {
 
 .post:hover {
     background-color: #fff5fd;
+}
+
+.post:hover .post-content {
+    background-color: #fffafe;
 }
 
 .posts-section .post:first-of-type {
