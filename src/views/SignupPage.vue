@@ -5,8 +5,7 @@
       <h1>Welcome to (Our site name)!</h1>
       <div class="form-container">
         <form id="signupForm" @submit.prevent="navigateToHome">
-          <a href="/signup" class="create-account">Create an account</a>
-          <p>or Please log in</p>
+          <a href="/login" class="create-account">Back to Log in page</a>
 
           <label for="user-email">Email:</label>
           <input type="text" id="user-email" name="user-email" required />
@@ -31,7 +30,6 @@
 
           <button type="submit" :disabled="passwordErrors.length > 0">Sign up</button>
 
-          <a href="/forgot-password" class="forgot-password">Forgot your password?</a>
         </form>
       </div>
     </main>

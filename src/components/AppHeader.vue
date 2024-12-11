@@ -4,9 +4,11 @@
       <div class="nav-left">
         <router-link to="/" class="nav-link">Home</router-link>
         <router-link to="/addPost" class="nav-link">Add Post</router-link>
+        <router-link to="/Contact" class="nav-link">Contacts</router-link>
+
       </div>
       <div class="nav-right">
-        <router-link to="/signup" class="nav-link">Sign Up/Log in</router-link>
+        <router-link to="/login" class="nav-link">Sign Up/Log in</router-link>
         <img src="/assets/user.png" class="profile-image" id="profile-image" alt="User Icon" />
       </div>
     </nav>

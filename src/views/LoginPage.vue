@@ -16,7 +16,6 @@
 
           <button type="submit">Log in</button>
 
-          <a href="/forgot-password" class="forgot-password">Forgot your password?</a>
         </form>
       </div>
     </main>
