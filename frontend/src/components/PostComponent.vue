@@ -10,14 +10,14 @@
       <!-- Like nupp -->
       <button class="like-button" @click="likePost">Like ❤️</button>
       <!-- Likes loendur -->
-      <span class="like-counter">{{ post.likes }} Likes</span>
+      <span class="like-counter">{{ likes }} Likes</span>
     </div>
   </article>
 </template>
 
 <script setup>
-import { computed, defineProps } from "vue";
-import { useStore } from "vuex";
+import { computed, defineProps, ref } from "vue";
+import axios from "../axios";
 
 // Props
 const props = defineProps({
@@ -27,8 +27,7 @@ const props = defineProps({
   },
 });
 
-// Vuex Store
-const store = useStore();
+const likes = ref(props.post.likes);
 
 // Computed property for formatted date
 const formattedDate = computed(() => {
@@ -37,8 +36,17 @@ const formattedDate = computed(() => {
 });
 
 
-const likePost = () => {
-  store.commit("incrementLikes", props.post.id); // Commit Vuex mutation
+const likePost = async () => {
+  try {
+    const response = await axios.put(`/api/posts/${props.post.id}/like`);
+
+    if (response.status === 200) {
+      // Update the local post object with the new likes count
+      likes.value = response.data.likes;
+    }
+  } catch (error) {
+    console.error("Error updating likes:", error);
+  }
 };
 </script>
 

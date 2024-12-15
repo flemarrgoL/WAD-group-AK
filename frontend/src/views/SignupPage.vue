@@ -2,22 +2,22 @@
   <div>
     <AppHeader />
     <main>
-      <h1>Welcome to (Our site name)!</h1>
+      <h1>Welcome to Our Site!</h1>
       <div class="form-container">
-        <form id="signupForm" @submit.prevent="navigateToHome">
+        <form id="signupForm" @submit.prevent="signupUser">
           <a href="/login" class="create-account">Back to Log in page</a>
 
           <label for="user-email">Email:</label>
-          <input type="text" id="user-email" name="user-email" required />
+          <input v-model="email" type="text" id="user-email" name="user-email" required />
 
           <label for="password">Password:</label>
           <input
-            type="password"
-            id="password"
-            name="password"
-            v-model="password"
-            @input="validatePassword"
-            required
+              v-model="password"
+              type="password"
+              id="password"
+              name="password"
+              @input="validatePassword"
+              required
           />
           <!-- Show password validation errors -->
           <div v-if="passwordErrors.length">
@@ -29,7 +29,7 @@
           </div>
 
           <button type="submit" :disabled="passwordErrors.length > 0">Sign up</button>
-
+          <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
         </form>
       </div>
     </main>
@@ -42,16 +42,16 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import AppHeader from "../components/AppHeader.vue";
 import AppFooter from "../components/AppFooter.vue";
+import axios from "../axios";
 
-
+// Data properties for form
+const email = ref("");
 const password = ref("");
 const passwordErrors = ref([]);
+const errorMessage = ref(""); // Error message for signup failure
 
-// Password validation
 const validatePassword = () => {
   const errors = [];
-
-  // Checking whether a condition is filled that makes the password invalid and
 
   if (password.value.length < 8 || password.value.length > 15) {
     errors.push("Password must be between 8 and 15 characters.");
@@ -74,7 +74,7 @@ const validatePassword = () => {
   }
 
   if (!/_/.test(password.value)) {
-    errors.push("Password must include the character '_'.");
+    errors.push("Password must include the character '_'");
   }
 
   // Update the errors
@@ -83,14 +83,31 @@ const validatePassword = () => {
 
 const router = useRouter();
 
-// Navigate to home page after successful psignup
-const navigateToHome = () => {
-  router.push("/");
+const signupUser = async () => {
+  try {
+    // Send POST request to backend with email and password
+    const response = await axios.post("/api/auth/signup", {
+      email: email.value,
+      password: password.value,
+    });
+
+    localStorage.setItem("jwt_token", response.data.token);
+
+    router.push("/");
+  } catch (error) {
+    // Handle error during signup (e.g., email already exists)
+    console.error("Signup failed:", error);
+    errorMessage.value = "An error occurred. Please try again later.";
+  }
 };
 </script>
 
 <style scoped>
 .error {
   color: red;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
 }
 </style>
