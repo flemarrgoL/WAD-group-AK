@@ -31,7 +31,7 @@ async function initializeDatabase() {
     (7, '@coder_cafe', '2024-10-08', 'Had a breakthrough in my latest coding project! Nothing feels as satisfying as debugging a tough issue. 💻🔥', NULL, 0),
     (8, '@artsy_anna', '2024-10-02', 'Finished my new painting today! Inspired by the colors of autumn. 🎨🍂', 'assets/alps.png', 0),
     (9, '@bookworm123', '2024-09-30', 'Finally finished reading that novel everyone’s been talking about. What a journey! 📚✨ Highly recommended to anyone who loves a good plot twist.', NULL, 0),
-    (10, '@fit_and_fab', '2024-09-28', 'Outdoor workouts are the best! Ran 10k today with amazing weather. Feeling great! 🏃‍♀️💪', 'assets/italian.png', 0);
+    (10, '@fit_and_fab', '2024-09-28', 'Outdoor workouts are the best! Ran 10k today with amazing weather. Feeling great! 🏃‍♀️💪', 'assets/italian.png', 0)
     ON CONFLICT (id) DO NOTHING;
     `;
 
