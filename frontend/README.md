@@ -26,7 +26,7 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### SQL to add some posts to the DB
+### SQL to add some posts to the DB (insert following query into pgadmin using "query tool")
 ```
 INSERT INTO posts (id, author, date, content, image, likes) VALUES
 (1, '@john_doe', '2024-10-04', 'Loving the fall weather! 🍁 #AutumnVibes', 'assets/autumn.png', 0),
